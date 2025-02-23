@@ -18,7 +18,21 @@
 
 目標是要用訓練資料集來訓練一個模型，輸入一個新聞標題，輸出一個預測的主題（上述 7 種的其中一個），並且用預測測試集來計算準確率 (Accuracy)。
 
-## Outlines
-- 實作的流程包含：簡易的資料分析、資料前處理、模型訓練與驗證、精準度評估
-- 使用 ScikitLearn 的 `accuracy_score()` 作為 accuracy 的計算
-- Futureworks
+## 思路及流程
+
+此為純文字分類問題。
+
+比較有效的方式是找一個 pre-trained language model，該模型必須能 output 韓文的 sentence embedding，接著 apply transfer learning 去訓練分類的 task。 詳細流程如下：
+
+*   需求理解
+*   資料分析 (EDA)
+*   資料前處理 (Preprocess)
+*   Proof of Concept (設計小模型，MVP 概念驗證、快速迭代)
+*   Model Design and Training
+*   Evaluation
+
+### TL;DR;
+
+Best model，evaluation 數據如下:
+- accuracy: 0.7910
+- f1_macro: 0.7916
